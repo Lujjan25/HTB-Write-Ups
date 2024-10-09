@@ -4,6 +4,10 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 class Serv(BaseHTTPRequestHandler):
 
     def do_GET(self):
+        if self.path[-5:] != '.html':
+            self.path = '/index.html'
+        if '..' in self.path:
+            self.path = '/index.html'
         if self.path == '/':
             self.path = '/index.html'
         try:
