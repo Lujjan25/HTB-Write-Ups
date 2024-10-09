@@ -8,8 +8,6 @@ class Serv(BaseHTTPRequestHandler):
             self.path = '/py-webserver/index.html'
         if '..' in self.path:
             self.path = '/py-webserver/index.html'
-        if self.path == '/':
-            self.path = '/py-webserver/index.html'
         if self.path == '/py-webserver/':
             self.path = '/py-webserver/index.html'
         try:
