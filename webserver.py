@@ -5,11 +5,13 @@ class Serv(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path[-5:] != '.html':
-            self.path = '/index.html'
+            self.path = '/py-webserver/index.html'
         if '..' in self.path:
-            self.path = '/index.html'
+            self.path = '/py-webserver/index.html'
         if self.path == '/':
-            self.path = '/index.html'
+            self.path = '/py-webserver/index.html'
+        if self.path == '/py-webserver/':
+            self.path = '/py-webserver/index.html'
         try:
             file_to_open = open(self.path[1:]).read()
             self.send_response(200)
