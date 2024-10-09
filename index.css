@@ -5,6 +5,8 @@ body{
 
 .site-header{
   background-color: #434343;
+  border: white 1px solid;
+  padding: 20px;
 }
 
 .header-title{
