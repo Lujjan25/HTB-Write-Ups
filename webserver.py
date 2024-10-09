@@ -3,7 +3,7 @@ import webbrowser
 import BaseHTTPServer
 import SimpleHTTPServer
 
-FILE = 'frontend.html'
+FILE = 'index.html'
 PORT = 8080
 
 
