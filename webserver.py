@@ -4,14 +4,13 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 class Serv(BaseHTTPRequestHandler):
 
     def do_GET(self):
-        if self.path[-5:] != '.html':
-            self.path = '/index.html'
         if '..' in self.path:
             self.path = '/index.html'
         if self.path == '/':
             self.path = '/index.html'
         try:
-            file_to_open = open(self.path[1:]).read()
+            header = open('header.html').read()
+            file_to_open = open(self.path[1:]).read().replace('<!--header-->', header)
             self.send_response(200)
         except:
             file_to_open = "File not found"
